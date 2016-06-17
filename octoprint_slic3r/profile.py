@@ -43,7 +43,6 @@ defaults = dict(
     z_offset=0.0,
     gcode_flavor=GcodeFlavors.REPRAP,
     use_relative_e_distances=False,
-    use_firmware_retraction=False,
     gcode_arcs=False,
     gcode_comments=False,
     vibration_limit=0,
@@ -62,7 +61,6 @@ defaults = dict(
     solid_infill_speed=60,
     top_solid_infill_speed=50,
     support_material_speed=60,
-    support_material_interface_speed="100%",
     bridge_speed=60,
     gap_fill_speed=20,
     first_layer_speed="30%",
@@ -70,7 +68,6 @@ defaults = dict(
     perimeter_acceleration=0,
     infill_acceleration=0,
     bridge_acceleration=0,
-    first_layer_acceleration=0,
     default_acceleration=0,
 
     layer_height=0.3,
@@ -90,9 +87,8 @@ defaults = dict(
     end_gcode=None,
     layer_gcode=None,
     toolchange_gcode=None,
-    seam_position=SeamPositions.ALIGNED,
     external_perimeters_first=False,
-    spiral_vase=False,
+
     only_retract_when_crossing_perimeters=False,
     solid_infill_below_area=70,
     infill_only_where_needed=False,
@@ -100,8 +96,6 @@ defaults = dict(
 
     extra_perimeters=True,
     avoid_crossing_perimeters=False,
-    thin_walls=True,
-    overhangs=True,
 
     support_material=False,
     support_material_threshold=0,
@@ -112,7 +106,6 @@ defaults = dict(
     support_material_interface_spacing=0,
     raft_layers=0,
     support_material_enforce_layers=0,
-    dont_support_bridges=True,
 
     retract_length=1,
     retract_speed=30,
@@ -146,7 +139,6 @@ defaults = dict(
     duplicate=1,
     duplicate_grid=(1,1), # TODO ?!
     duplicate_distance=6,
-    xy_size_compensation=0,
 
     complete_objects=False,
     extruder_clearance_radius=20,
@@ -158,7 +150,6 @@ defaults = dict(
     extrusion_width="100%",
     first_layer_extrusion_width="100%",
     perimeter_extrusion_width="100%",
-    external_perimeter_extrusion_width="100%",
     infill_extrusion_width="100%",
     solid_infill_extrusion_width="100%",
     top_infill_extrusion_width="100%",
@@ -169,14 +160,11 @@ defaults = dict(
     perimeter_extruder=1,
     infill_extruder=1,
     support_material_extruder=1,
-    support_material_interface_extruder=1,
-    ooze_prevention=False,
-    standby_temperature_delta=-5
 )
 
 float_or_percentage = (
     "small_perimeter_speed", "external_perimeter_speed", "infill_speed", "solid_infill_speed", "top_solid_infill_speed",
-    "support_material_speed", "support_material_interface_speed", "bridge_speed", "gap_fill_speed", "first_layer_speed",
+    "support_material_speed", "bridge_speed", "gap_fill_speed", "first_layer_speed",
     "first_layer_height", "extrusion_width", "first_layer_extrusion_width", "perimeter_extrusion_width",
     "infill_extrusion_width", "solid_infill_extrusion_width", "top_infill_extrusion_width", "top_infill_extrusion_width",
     "support_material_extrusion_width"
